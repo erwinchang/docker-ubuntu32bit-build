@@ -1,10 +1,11 @@
 FROM erwinchang/docker-ubuntu1404-32bit
 
 # Install.
-
+# rsync for web build
 RUN apt-get update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y vim.tiny wget sudo net-tools ca-certificates unzip apt-transport-https \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y make git curl \
+	&& DEBIAN_FRONTEND=noninteractive apt-get install -y rsync \
 	&& rm -rf /var/lib/apt/lists/*
 
 # https://github.com/nodejs/docker-node/blob/master/6.11/Dockerfile
@@ -41,6 +42,9 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 # Install UCI
 ADD uci-lib.tgz /
 RUN ldconfig
+
+#use bash
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # Set mount floder
 RUN mkdir /root/workspace
