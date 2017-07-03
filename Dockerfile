@@ -1,4 +1,4 @@
-FROM erwinchang/docker-ubuntu1404-32bit
+FROM erwinchang/docker-ubuntu1404-32bit:20170703
 
 # Install.
 # rsync for web build
@@ -42,6 +42,9 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 # Install UCI
 ADD uci-lib.tgz /
 RUN ldconfig
+
+#add gitconfig file
+ADD gitconfig /root/.gitconfig
 
 #use bash
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh

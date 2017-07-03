@@ -18,10 +18,12 @@ docker run -it --rm --volume=/home/user:/root/workspace erwinchang/docker-ubuntu
 ### 參考來源
 
 * [sameersbn/docker-ubuntu][2]
+* [nodejs/docker-node][3]
 
 
 
 
 [1]:https://github.com/erwinchang/docker-ubuntu1404-32bit
 [2]:https://github.com/sameersbn/docker-ubuntu/blob/master/Dockerfile
+[3]:https://github.com/nodejs/docker-node/blob/master/6.11/Dockerfile
 
