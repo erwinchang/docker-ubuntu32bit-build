@@ -1,7 +1,7 @@
 all: build
 
 build:
-	@docker build --tag=erwinchang/docker-ubuntu32bit-build:latest .
+	@docker build --tag=erwinchang/docker-ubuntu32bit-build-gcc:latest .
 
 release: build
-	@docker build --tag=erwinchang/docker-ubuntu32bit-build:$(shell cat VERSION) .
+	@docker build --tag=erwinchang/docker-ubuntu32bit-build-gcc:$(shell cat VERSION) .
