@@ -27,7 +27,7 @@ RUN set -ex \
     gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
 done
 
-ENV NODE_VERSION 6.11.0
+ENV NODE_VERSION 6.11.3
 ENV NODE_ARCH x86
 
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-$NODE_ARCH.tar.gz" \
@@ -39,7 +39,7 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
 
-ENV YARN_VERSION 0.24.6
+ENV YARN_VERSION 1.0.1
 RUN set -ex \
   && for key in \
     6A010C5166006599AA17F08146C2130DFD2497F5 \
