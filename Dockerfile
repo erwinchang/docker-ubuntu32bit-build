@@ -57,6 +57,8 @@ RUN set -ex \
   && ln -s /opt/yarn/bin/yarn /usr/local/bin/yarnpkg \
 && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
+RUN yarn global add npm
+
 
 # Install UCI
 ADD uci-lib.tgz /
