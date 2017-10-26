@@ -27,7 +27,7 @@ RUN set -ex \
     gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
 done
 
-ENV NODE_VERSION 6.11.3
+ENV NODE_VERSION 6.11.5
 ENV NODE_ARCH x86
 
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-$NODE_ARCH.tar.gz" \
